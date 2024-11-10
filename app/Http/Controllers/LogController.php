@@ -77,6 +77,7 @@ class LogController extends Controller
         foreach ($logs as $log) {
             // Menambahkan elemen log baru untuk setiap entri
             $logEntry = $xml->addChild('log');
+            $logEntry->addChild('id', htmlspecialchars($log->id));
             $logEntry->addChild('ip_address', htmlspecialchars($log->ip_address));
             $logEntry->addChild('date', htmlspecialchars($log->date));
             $logEntry->addChild('time', htmlspecialchars($log->time));
